@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>點餐系統</title>
+<style>
+  body { font-family: "微軟正黑體"; margin: 20px; }
+  h2 { text-align: center; }
+  table { width: 600px; margin: 10px auto; border-collapse: collapse; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  button { padding: 4px 8px; margin: 2px; cursor: pointer; }
+  #total, #orderList { width: 600px; margin: 20px auto; font-size: 18px; }
+  
+  /* 右下角固定結帳按鈕 */
+  #checkoutBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  }
+  #checkoutBtn:hover {
+    background-color: #e68a00;
+  }
+</style>
+</head>
+<body>
+
+<h2>🍔 飲品 & 餐點 點餐系統</h2>
+
+<h3>餐點</h3>
+<table>
+  <tr><th>品項</th><th>大</th><th>小</th><th>操作</th></tr>
+  <tr>
+    <td>總匯吐司</td>
+    <td>50</td>
+    <td>30</td>
+    <td>
+      <button onclick="addItem('總匯吐司','大',50)">大</button>
+      <button onclick="addItem('總匯吐司','小',30)">小</button>
+    </td>
+  </tr>
+  <tr>
+    <td>卡拉雞腿堡</td>
+    <td>60</td>
+    <td>40</td>
+    <td>
+      <button onclick="addItem('卡拉雞腿堡','大',60)">大</button>
+      <button onclick="addItem('卡拉雞腿堡','小',40)">小</button>
+    </td>
+  </tr>
+  <tr>
+    <td>吐司</td>
+    <td>20</td>
+    <td>10</td>
+    <td>
+      <button onclick="addItem('吐司','大',20)">大</button>
+      <button onclick="addItem('吐司','小',10)">小</button>
+    </td>
+  </tr>
+</table>
+
+<h3>飲品</h3>
+<table>
+  <tr><th>品項</th><th>冰</th><th>熱</th><th>操作</th></tr>
+  <tr>
+    <td>美式咖啡</td>
+    <td>40</td>
+    <td>40</td>
+    <td>
+      <button onclick="addItem('美式咖啡','冰',40)">冰</button>
+      <button onclick="addItem('美式咖啡','熱',40)">熱</button>
+    </td>
+  </tr>
+  <tr>
+    <td>卡布奇諾</td>
+    <td>-</td>
+    <td>60</td>
+    <td>
+      <button onclick="addItem('卡布奇諾','熱',60)">熱</button>
+    </td>
+  </tr>
+  <tr>
+    <td>焦糖卡布奇諾</td>
+    <td>-</td>
+    <td>70</td>
+    <td>
+      <button onclick="addItem('焦糖卡布奇諾','熱',70)">熱</button>
+    </td>
+  </tr>
+  <tr>
+    <td>隱藏版</td>
+    <td>90</td>
+    <td>90</td>
+    <td>
+      <button onclick="addItem('隱藏版','冰',90)">冰</button>
+      <button onclick="addItem('隱藏版','熱',90)">熱</button>
+    </td>
+  </tr>
+</table>
+
+<div id="orderList">購物清單：<br></div>
+<div id="total">總金額：0 元</div>
+
+<!-- 右下角固定結帳按鈕 -->
+<button id="checkoutBtn" onclick="checkout()">去結帳</button>
+
+<script>
+let total = 0;
+let order = [];
+
+function addItem(name, type, price) {
+  total += price;
+  order.push(`${name} (${type}) - ${price}元`);
+  
+  document.getElementById("total").innerText = `總金額：${total} 元`;
+  document.getElementById("orderList").innerHTML = "購物清單：<br>" + order.join("<br>");
+}
+
+function checkout() {
+  if(order.length === 0){
+    alert("您尚未點餐！");
+  } else {
+    alert("您的訂單：\n" + order.join("\n") + "\n\n總金額：" + total + " 元\n感謝您的點餐！");
+  }
+}
+</script>
+
+</body>
+</html>

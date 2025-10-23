@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>廚師介紹｜Chef Profile</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #fffaf4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #d35400;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .chef-photo {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .chef-photo img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .chef-info {
+      flex: 2 1 400px;
+      padding: 1rem 2rem;
+    }
+
+    .chef-info h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chef-info h4 {
+      color: #d35400;
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    .chef-info p {
+      line-height: 1.8;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .skills {
+      margin-top: 2rem;
+    }
+
+    .skills h3 {
+      margin-bottom: 1rem;
+    }
+
+    .skill-bar {
+      background-color: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-bar span {
+      display: block;
+      height: 20px;
+      background-color: #e67e22;
+      border-radius: 20px;
+      text-align: right;
+      color: white;
+      padding-right: 10px;
+      font-size: 0.9rem;
+      line-height: 20px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 1.2rem 0;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .chef-info {
+        padding: 0 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>主廚介紹</h1>
+  </header>
+
+  <section class="container">
+    <div class="chef-photo">
+      <img src=http://cdn-img.sm-tc.cn/?src=l4uLj4zF0NCWkpjN0ZeKnoyXlsnRnJCS0JaSnpiajNCNmoyQio2cmtCZzcnIyM3HxsfLy87J0M3Pzc3Qz8nQzs3Qx8rJzsegzMjHy8zIzs7Ox87Rj5GYwJaSnpiaspCYjc3Qjoqek5aLhtDOz8%2FQlpGLmo2Tnpya0M7Qi5eKkp2RnpaT0N7OyciHzsvLjdCYjZ6JlouG0LGQjYuX0JyNkI%2FQzsnIh87Ly9CZkI2SnovQlY%2BamA%3D%3D&restype=3&from=derive&pi=&v=1 alt="Chef Photo">
+    </div>
+
+    <div class="chef-info">
+      <h2>田所浩二</h2>
+      <h4>現任：橙香西餐廚房 執行主廚</h4>
+      <p>
+        擁有超過15年的歐式料理經驗，專精於義大利及法式經典料理。
+        以細膩刀工與創新風味聞名，堅持使用在地新鮮食材，
+        將每一道菜品打造成藝術品般的呈現。
+      </p>
+
+      <div class="skills">
+        <h3>料理專長</h3>
+        <div class="skill-bar"><span style="width: 90%;">義大利料理 90%</span></div>
+        <div class="skill-bar"><span style="width: 85%;">法式料理 85%</span></div>
+        <div class="skill-bar"><span style="width: 75%;">甜點製作 75%</span></div>
+        <div class="skill-bar"><span style="width: 80%;">廚房管理 80%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Chef’s Kitchen. All Rights Reserved.
+  </footer>
+</body>
+</html>
